@@ -40,7 +40,7 @@ for func in $forbidden_calls; do
     echo "Checking for calls to forbidden function: $normalized_func ($func)"
 
     # Use objdump to find all references to the function in the binary
-    objdump -d -l "$program_name" | grep -B 1 -A 1 "call.*<$normalized_func" | while read -r line; do
+    objdump -d -l "$program_name" | grep "call.*<$normalized_func" | while read -r line; do
         # Extract the address of the call
         addr=$(echo "$line" | awk '/call/ {print $1}')
         if [[ -n "$addr" ]]; then
