@@ -1,6 +1,12 @@
 # check_forbidden_calls.sh
 Allows to check the unauthorized functions of the subject.
 
+## Download
+
+```bash
+curl https://raw.githubusercontent.com/llebioda/42-Script-Utils/refs/heads/main/check_forbidden_calls.sh -O && chmod 744 check_forbidden_calls.sh
+```
+
 ## Usage
 
 ./check_forbidden_calls.sh program_name [list of external function]
